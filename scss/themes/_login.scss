@@ -1,0 +1,315 @@
+/* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4070f4;
+}
+
+.container-log{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.container-log .forms{
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+
+
+.container-log .form{
+    width: 50%;
+    padding: 30px;
+    background-color: #fff;
+    transition: margin-left 0.18s ease;
+}
+
+.container-log.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container-log .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+.container-log.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.container-log.active .forms{
+    height: 600px;
+}
+.container-log .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: #4070f4;
+    border-radius: 25px;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: #4070f4;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: #4070f4;
+}
+
+.input-field i.icon{
+    left: 0;
+}
+.input-field i.showHidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input{
+    margin-right: 10px;
+    accent-color: #4070f4;
+}
+
+.form .text{
+    color: #333;
+    font-size: 14px;
+}
+
+.form a.text{
+    color: #4070f4;
+    text-decoration: none;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+}
+
+.form .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover{
+    background-color: #265df2;
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+// looding
+
+// https://coolors.co/d6fff6-4dccbd-110d31-2374ab-ff8484
+$light-cyan: #d6fff6ff;
+$medium-turquoise: #4dccbdff;
+$russian-violet: #110d31ff;
+$french-blue: #2374abff;
+$light-coral: #ff8484ff;
+
+$size: 80px;
+$animation-duration: 2s;
+
+
+.bady {
+//   background-color: $light-coral;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.scene {
+  position: relative;
+  z-index: 2;
+  height: $size*2.75;
+  width: $size*2.75;
+  display: grid;
+  place-items: center;
+}
+
+.cube-wrapper {
+  transform-style: preserve-3d;
+  animation: bouncing $animation-duration infinite;
+}
+
+.cube {
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateZ(45deg);
+  animation: rotation $animation-duration infinite;
+}
+
+.cube-faces {
+  transform-style: preserve-3d;
+  height: $size;
+  width: $size;
+  position: relative;
+  transform-origin: 0 0;
+  transform: translateX(0) translateY(0) translateZ(-$size/2);
+}
+
+.cube-face {
+  position: absolute;
+  inset: 0;
+  background: rgb(53, 12, 12);
+  border: solid 1px $light-coral;
+  &.shadow {
+    transform: translateZ(-$size);
+    animation: bouncing-shadow $animation-duration infinite;
+  }
+  &.top {
+    transform: translateZ($size);
+  }
+  &.front {
+    transform-origin: 0 50%;
+    transform: rotateY(-90deg);
+  }
+  &.back {
+    transform-origin: 0 50%;
+    transform: rotateY(-90deg) translateZ(-$size);
+  }
+  &.right {
+    transform-origin: 50% 0;
+    transform: rotateX(-90deg) translateY(-$size);
+  }
+  &.left {
+    transform-origin: 50% 0;
+    transform: rotateX(-90deg) translateY(-$size) translateZ($size);
+  }
+}
+
+@keyframes rotation {
+  $start: 45deg;
+  
+  0% {
+    transform: rotateX($start) rotateY(0) rotateZ($start);
+    animation-timing-function: cubic-bezier(0.17,0.84,0.44,1);
+  }
+  50% {
+    transform: rotateX($start) rotateY(0) rotateZ($start+360/2);
+    animation-timing-function: cubic-bezier(0.76,0.05,0.86,0.06);
+  }
+  100% {
+    transform: rotateX($start) rotateY(0) rotateZ($start+360);
+    animation-timing-function: cubic-bezier(0.17,0.84,0.44,1);
+  }
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translateY(-$size*.5);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  }
+
+  45% {
+    transform: translateY($size*.5);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  100% {
+    transform: translateY(-$size*.5);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  }
+}
+
+@keyframes bouncing-shadow {
+  0% {
+    transform: translateZ(-$size) scale(1.3);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+    opacity: .05;
+  }
+
+  45% {
+    transform: translateZ(0);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: .3;
+  }
+
+  100% {
+    transform: translateZ(-$size) scale(1.3);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+    opacity: .05;
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer type="module" src="js/main.js"></script>
+  <script defer type="module" src="js/student.js"></script>
+</head>
+
+<body>
+  <div class="container px-md-5 my-3">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-md-8 order-md-last">
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <a class="navbar-brand" href="index.html">MilliyBro <span>Programming agency</span></a>
+          </div>
+          <div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
+            <form action="#" class="searchform order-lg-last">
+              <div class="form-group d-flex">
+                <input type="text" class="form-control search-input w-100" placeholder="Searching..." />
+                <button type="submit" placeholder="" class="form-control search"><span
+                    class="fa fa-search"></span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="social-media">
+          <p class="mb-0 d-flex">
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i
+                  class="sr-only">Facebook</i></span></a>
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i
+                  class="sr-only">Twitter</i></span></a>
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i
+                  class="sr-only">Instagram</i></span></a>
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i
+                  class="sr-only">Dribbble</i></span></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="input-group my-3 d-flex justify-content-end ms-3">
+      <span class="input-group-text">
+        <select name="" id="">
+          <option value="">isMarried</option>
+          <option value="">yes</option>
+          <option value="">no</option>
+        </select>
+      </span>
+      <span class="input-group-text">
+        <select name="" id="">
+          <option value="">lastName</option>
+          <option value="">asc</option>
+          <option value="">desc</option>
+        </select>
+      </span>
+      <button class="btn btn-modal open-modal-btn" type="button" data-bs-toggle="modal"
+        data-bs-target="#category-modal">
+        Add student
+      </button>
+    </div>
+    <div class="alert alert-info">
+      <span>Total students: </span>
+      <span class="total-categories"></span>
+    </div>
+
+
+
+    <div class="row student-row">
+
+    </div>
+    <ul class="pagination"></ul>
+
+    <div class="modal fade" id="category-modal">
+      <div class="modal-dialog">
+        <form class="g-3 needs-validation category-form" novalidate>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Student data
+              </h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" required />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill!</div>
+              </div>
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill!</div>
+              </div>
+              <div class="row">
+                <div class="col-6 mb-3">
+                  <label for="phoneNumber" class="form-label">Phone Number</label>
+                  <input type="number"  class="form-control" id="phoneNumber" placeholder="+998__-___-__-__" required />
+                  <div id="phone_error" class="error hidden"> Please enter a valid phone number </div>
+                  
+                </div>
+                <div class="col-6 mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" required />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please fill!</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Birthday data</label>
+                <input type="date" class="form-control" value="06/27/2003" id="date" required />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill!</div>
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">image</label>
+                <input type="text" class="form-control" id="image" required />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill!</div>
+              </div>
+              <div class="col-12 mt-2">
+                <div class="form-check">
+                   <input class="form-check-input" type="checkbox" value="" id="isWork">
+                   <label class="form-check-label" for="isWork">
+                      isWork
+                   </label>
+                   
+                </div>
+             </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Add category
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+</body>
+
+</html>

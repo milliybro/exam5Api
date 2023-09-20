@@ -1,0 +1,277 @@
+
+ 
+ @import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700);
+ @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+ @import url(https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css);
+ ::selection {
+   color: #fff;
+   background: #2a2b39;
+ }
+ 
+ ::-moz-selection {
+   color: #fff;
+   background: #2a2b39;
+ }
+ 
+
+ 
+ 
+ p {
+   padding: 0;
+   margin: 0;
+   display: inline-block;
+ }
+ 
+ a {
+   color: #2a2b39;
+   text-decoration: none;
+   transition: all 0.2s ease-in-out;
+ }
+ a:hover {
+   color: #6acd79;
+ }
+
+ .teacher-row{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   row-gap: 20px;
+
+   
+ }
+ 
+ .bussinesscard {
+   height: 320px;
+   width: 100%;
+   overflow: hidden;
+   box-shadow: 0px 0px 43px -10px black;
+   position: relative;
+ }
+ .bussinesscard .flip {
+   transition: all 0.5s ease;
+ }
+ .bussinesscard .front {
+   z-index: 11;
+   width: 100%;
+   position: absolute;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.3);
+   box-shadow: 0px 0px 33px -1px rgba(0, 0, 0, 0.45);
+   transform: scale(1, 1);
+   transition: all 0.6s ease;
+ }
+ .bussinesscard .front .top {
+   height: 50%;
+   background-color: rgba(255, 255, 255, 0.3);
+
+
+ }
+ .bussinesscard .front .top:after {
+   position: absolute;
+   content: '';
+   pointer-events: none;
+ }
+ .bussinesscard .front .top:after {
+   left: 50%;
+   width: 2em;
+   height: 2em;
+   transform: translateX(-50%) rotate(45deg);
+   bottom: 9em;
+   z-index: 10;
+   background: inherit;
+ }
+ .bussinesscard .front .top .logo {
+   display: inline-block;
+   // background: #6acd79;
+   color: #fff;
+   z-index: 11;
+   padding: .16em;
+   // border: 8px solid #fff;
+   position: relative;
+   pointer-events: none;
+   transform: translateY(-10%);
+   left: 30%;
+   margin-top: .4em;
+   font-size: 4em;
+ }
+
+ .bussinesscard .front .top .logo .fat img {
+   width: 110% !important;
+   height: 100% !important;
+   object-fit: cover;
+   object-position: center;
+ }
+ .bussinesscard .front .top .logo .skinny {
+   font-weight: 100;
+ }
+ .bussinesscard .front .nametroduction {
+   margin-top: 2em;
+   transform: translateY(0);
+   z-index: 8;
+ }
+ .bussinesscard .front .name {
+   color: #2a2b39;
+   font-weight: 400;
+   font-size: 2em;
+   text-align: center;
+   position: relative;
+   margin-bottom: .35em;
+ }
+ .bussinesscard .front .name:after {
+   content: '';
+   position: absolute;
+   top: 1.3em;
+   width: 20%;
+   left: 40%;
+   right: 40%;
+   height: 1px;
+   background: #2a2b39;
+ }
+ .bussinesscard .front .introduction {
+   text-align: center;
+   color: #2a2b39;
+   font-family: 'Old Standard TT', serif;
+   font-style: italic;
+   font-size: 14px;
+ }
+ .bussinesscard .front .contact {
+   color: #2a2b39;
+   margin-left: 1.7em;
+   font-weight: 300;
+   font-size: 1em;
+   transform: translateY(400%);
+ }
+ .bussinesscard .front .contact .website {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+  h5{
+    font-size: 20px !important;
+  }
+ }
+ .fullName{
+  display: flex;
+ }
+ .bussinesscard .front .contact a {
+   font-size: 16px;
+   margin-top: -20px !important;
+ }
+ .bussinesscard .back {
+   width: 100%;
+   height: 100%;
+   background: rgba(255, 255, 255, 0.3);
+   backface-visibility: hidden;
+   position: absolute;
+ }
+ 
+ .tooltip {
+   position: absolute;
+   left: 1em;
+   bottom: 1em;
+   color: #fff;
+   font-weight: 300;
+   padding: .4em;
+   background: #6acd79;
+ }
+ 
+ /* HOVER ANIMATIONS */
+ .front .top .logo, .front .top, .front .top:after, .front .nametroduction, .front .contact img {
+   transition: all 0.7s ease-in-out;
+ }
+ 
+ .flip:hover .front .top .logo {
+   margin-top: .18em;
+   font-size: 1.3em;
+   // border: 3px solid #fff;
+   margin-left: .15em;
+   transform: translateX(0px);
+   left: 10px;
+ }
+ .flip:hover .front .top .logo img{
+   width: 40% !important;
+ }
+ 
+ .flip:hover .front .top {
+   height: 20%;
+ }
+ .flip:hover .front .top:after {
+   width: 1.5em;
+   height: 1.5em;
+   bottom: 16.3em;
+ }
+ 
+ .flip:hover .front .nametroduction {
+   transform: translateY(400%);
+ }
+ 
+ .flip:hover .front .contact {
+   transform: translateY(-52%);
+ }
+
+
+ .btn-modal{
+    background-color: blueviolet !important;
+    padding: 10px !important;
+    color: white !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+ }
+
+ .nametroduction{
+  h3{
+    font-size: 14px;
+  }
+ }
+
+ .btns{
+  margin-top: 30px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+
+ }
+ .btn-edit{
+  background-color: #6acd79 !important;
+  color:#fff !important;
+
+ }
+ .btn-delete{
+  background-color: red !important;
+  color:#fff !important;
+ }
+ .btn-student{
+  background-color: cornflowerblue !important;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+  padding: 15px 15px !important;
+  // border-radius: 50% !important;
+
+  color:#fff !important;
+  transform: skew(370px);
+
+ }
+
+ .error
+{
+  color: red;
+  size: 80%
+}
+.hidden
+{
+  display:none
+}
+
+.pagination{
+  margin: 20px auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .page-link{
+    background-color: transparent !important;
+    border: none !important;
+  }
